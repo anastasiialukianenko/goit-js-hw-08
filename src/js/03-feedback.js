@@ -38,18 +38,15 @@ window.addEventListener('DOMContentLoaded', updateFormFieldsFromStorage);
 
 formEl.addEventListener('submit', function(event) {
   event.preventDefault();
-
-
-  localStorage.removeItem('feedback-form-state');
-  emailInputEl.value = '';
-  messageInputEl.value = '';
-
- 
-  const formData = {
+const formData = {
     email: emailInputEl.value,
     message: messageInputEl.value
   };
   console.log(formData);
+
+    
+  localStorage.removeItem('feedback-form-state');
+    event.currentTarget.reset();
 });
 
 
